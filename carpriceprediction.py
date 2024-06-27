@@ -1,7 +1,7 @@
 from tkinter import *
 import pickle
 
-with open('RandomForestRegressor(n_estimators=30)_model.pkl', 'rb') as f:
+with open('RandomForestRegressor_model.pkl', 'rb') as f:
         model = pickle.load(f)
 seller_selected_value=""
 fuel_selected_value=""
@@ -70,7 +70,7 @@ def pred_price():
         input_values.append(1.0)
         
     prediction = model.predict([input_values])[0]
-    price_label.config(text = prediction)
+    price_label.config(text = f"Predicted price:{prediction}")
     print(f"Predicted price: {prediction}")
 
 
